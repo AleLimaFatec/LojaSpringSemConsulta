@@ -6,15 +6,14 @@ import jakarta.persistence.*;
 @Table(name = "estoque")
 public class Estoque {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToOne
     @JoinColumn(name = "produto_id")
     private Produto produto;
     private Integer quantidade;
 
-    public Estoque(Long id, Produto produto, Integer quantidade) {
-        this.id = id;
+    public Estoque(Produto produto, Integer quantidade) {
         this.produto = produto;
         this.quantidade = quantidade;
     }

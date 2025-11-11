@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 @Table(name = "produto")
 public class Produto {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private BigDecimal preco;
@@ -16,8 +16,7 @@ public class Produto {
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
-    public Produto(Long id, String nome, BigDecimal preco, Categoria categoria) {
-        this.id = id;
+    public Produto( String nome, BigDecimal preco, Categoria categoria) {
         this.nome = nome;
         this.preco = preco;
         this.categoria = categoria;

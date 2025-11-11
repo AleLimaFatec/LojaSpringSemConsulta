@@ -1,20 +1,16 @@
 package br.universidade.loja.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "categoria")
 public class Categoria {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
 
-    public Categoria(Long id, String nome) {
-        this.id = id;
+    public Categoria(String nome) {
         this.nome = nome;
     }
 

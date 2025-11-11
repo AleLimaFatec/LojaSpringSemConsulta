@@ -12,6 +12,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 @SpringBootApplication
 public class LojaApplication implements CommandLineRunner {
@@ -29,22 +32,9 @@ public class LojaApplication implements CommandLineRunner {
 	}
 	@Override
 	public void run(String... args) throws Exception {
+
 		System.out.println("Loja inicializada!");
-		Categoria c1 = new Categoria();
-		c1.setNome("Eletrônicos");
-		catRepo.save(c1);
 
-		Produto p1 = new Produto();
-		p1.setNome("Smartphone");
-		p1.setPreco(new BigDecimal("1500.00"));
-		p1.setCategoria(c1);
-		prodRepo.save(p1);
-
-		Estoque e1 = new Estoque();
-		e1.setProduto(p1);
-		e1.setQuantidade(50);
-
-		estRepo.save(e1);
-	}
+    }
 
 }
